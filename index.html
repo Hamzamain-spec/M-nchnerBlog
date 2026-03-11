@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MünchnerBlog — Aus dem Herzen Bayerns</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#005BAC;--dark-blue:#003D7A;--sky:#E8F2FC;--white:#fff;--cream:#FAFBFD;--dark:#1A1F2E;--mid:#5A6475;--border:#D4E2F0;--gold:#C8960A;--red:#A0001E}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark)}
+
+/* BAVARIAN DIAMOND STRIP */
+.diamond-strip{background:var(--blue);height:8px;background-image:repeating-linear-gradient(90deg,var(--blue) 0px,var(--blue) 20px,#fff 20px,#fff 40px)}
+
+/* HEADER */
+header{background:var(--white);box-shadow:0 2px 20px rgba(0,91,172,0.08)}
+.header-inner{max-width:1200px;margin:0 auto;padding:20px 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{text-decoration:none;display:flex;align-items:center;gap:14px}
+.logo-crest{width:52px;height:52px;background:linear-gradient(135deg,var(--blue),var(--dark-blue));display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;font-weight:800;font-family:'Lora',serif;clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%)}
+.logo-text{}
+.logo-name{font-family:'Lora',serif;font-size:30px;font-weight:700;color:var(--dark);letter-spacing:-0.5px;line-height:1}
+.logo-name span{color:var(--blue)}
+.logo-sub{font-size:11px;color:var(--mid);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-badge{background:var(--sky);border:1px solid var(--border);padding:6px 14px;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;border-radius:3px}
+
+/* NAV */
+nav{background:var(--blue)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;display:flex}
+nav a{display:block;padding:13px 20px;color:rgba(255,255,255,0.75);text-decoration:none;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;border-bottom:3px solid transparent}
+nav a:hover{color:#fff;border-bottom-color:var(--gold)}
+nav a.active{color:#fff;border-bottom-color:#fff}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--dark-blue) 0%,var(--blue) 50%,#1A6EC2 100%);padding:80px 28px;position:relative;overflow:hidden}
+.hero::before{content:'🦁';position:absolute;font-size:280px;right:-20px;bottom:-40px;opacity:0.05;line-height:1}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 20px,var(--white) 20px,var(--white) 40px)}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-text{}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.hero-eyebrow-flag{display:flex;gap:3px}
+.flag-blue{width:24px;height:14px;background:var(--blue)}
+.flag-white{width:24px;height:14px;background:#fff}
+.hero-eyebrow-text{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);font-weight:700}
+.hero h1{font-family:'Lora',serif;font-size:54px;color:#fff;line-height:1.05;margin-bottom:20px;font-weight:700;letter-spacing:-0.5px}
+.hero h1 em{color:var(--gold);font-style:italic;display:block}
+.hero p{font-size:15px;color:rgba(255,255,255,0.6);line-height:1.8;font-weight:300;margin-bottom:32px}
+.hero-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);padding:13px 28px;text-decoration:none;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;border-radius:3px}
+.hero-btn:hover{background:#fff;color:var(--dark)}
+.hero-cards{display:flex;flex-direction:column;gap:12px}
+.hero-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:18px 20px;display:flex;align-items:center;gap:16px;border-radius:4px;transition:background 0.2s}
+.hero-card:hover{background:rgba(255,255,255,0.14)}
+.hero-card-icon{font-size:28px;flex-shrink:0}
+.hero-card-text{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.4;font-weight:300}
+.hero-card-text strong{color:#fff;display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+
+/* SECTION */
+.section{max-width:1200px;margin:52px auto;padding:0 28px}
+.section-top{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.section-icon{width:40px;height:40px;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;border-radius:4px;flex-shrink:0}
+.section-title{font-family:'Lora',serif;font-size:26px;font-weight:700;color:var(--dark);letter-spacing:-0.3px}
+.section-line{flex:1;height:1px;background:var(--border)}
+.see-all{font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;letter-spacing:0.5px;white-space:nowrap}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;cursor:pointer;transition:all 0.3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,91,172,0.12);border-color:var(--blue)}
+.card-img{height:188px;position:relative;overflow:hidden}
+.card-img-bg{width:100%;height:100%;transition:transform 0.5s}
+.card:hover .card-img-bg{transform:scale(1.06)}
+.card-cat{position:absolute;bottom:12px;left:12px;background:var(--blue);color:#fff;font-size:9px;font-weight:700;letter-spacing:2px;padding:4px 10px;text-transform:uppercase;border-radius:2px}
+.card-body{padding:22px}
+.card-meta{font-size:11px;color:#bbb;font-weight:600;letter-spacing:0.5px;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.card-meta::before{content:'';width:16px;height:1px;background:var(--gold)}
+.card-title{font-family:'Lora',serif;font-size:19px;font-weight:700;color:var(--dark);line-height:1.3;margin-bottom:10px}
+.card-excerpt{font-size:13px;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:16px}
+.card-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--blue);text-decoration:none;letter-spacing:0.5px;text-transform:uppercase}
+.card-link:hover{color:var(--dark-blue)}
+
+.bg1{background:linear-gradient(135deg,#005BAC,#1A6EC2)}
+.bg2{background:linear-gradient(135deg,#C8960A,#E5B020)}
+.bg3{background:linear-gradient(135deg,#A0001E,#C8002A)}
+.bg4{background:linear-gradient(135deg,#1E5C1A,#2E8A28)}
+.bg5{background:linear-gradient(135deg,#003D7A,#005BAC)}
+.bg6{background:linear-gradient(135deg,#4A2C8A,#6A3CB0)}
+.empty{text-align:center;padding:80px;color:var(--mid);grid-column:1/-1}
+.empty h3{font-family:'Lora',serif;font-size:26px;color:var(--dark);margin-bottom:8px}
+
+footer{background:var(--dark);color:rgba(255,255,255,0.4);margin-top:60px}
+.diamond-strip-footer{background:var(--blue);height:6px;background-image:repeating-linear-gradient(90deg,var(--blue) 0px,var(--blue) 20px,#fff 20px,#fff 40px)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+.footer-brand .fl{font-family:'Lora',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:12px}
+.footer-brand .fl span{color:var(--gold)}
+.footer-brand p{font-size:13px;line-height:1.7;font-weight:300}
+.footer-col h4{font-size:10px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px}
+.footer-col a{display:block;color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;margin-bottom:8px;font-weight:300}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);text-align:center;padding:18px;font-size:12px;max-width:1200px;margin:0 auto}
+.footer-bottom a{color:rgba(255,255,255,0.35);text-decoration:none;margin:0 8px}
+.footer-bottom a:hover{color:var(--blue)}
+.admin-link{position:fixed;bottom:20px;right:20px;background:var(--blue);color:#fff;padding:10px 18px;font-size:12px;text-decoration:none;opacity:0.4;transition:opacity 0.2s;font-weight:700;border-radius:4px}
+.admin-link:hover{opacity:1}
+</style>
+</head>
+<body>
+<div class="diamond-strip"></div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-crest">M</div>
+      <div class="logo-text">
+        <div class="logo-name">Münchner<span>Blog</span></div>
+        <div class="logo-sub">Aus dem Herzen Bayerns</div>
+      </div>
+    </a>
+    <div class="header-right">
+      <div class="header-badge">🦁 Bayern</div>
+      <div class="header-badge" style="background:var(--sky);color:var(--mid)">Mi, 12. März 2026</div>
+    </div>
+  </div>
+</header>
+<nav><div class="nav-inner">
+  <a href="index.html" class="active">Home</a>
+  <a href="index.html">München</a>
+  <a href="index.html">Bayern</a>
+  <a href="index.html">Kultur</a>
+  <a href="index.html">Wirtschaft</a>
+  <a href="index.html">Reisen</a>
+  <a href="index.html">Ratgeber</a>
+</div></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-flag"><div class="flag-white"></div><div class="flag-blue"></div></div>
+        <div class="hero-eyebrow-text">Bayerischer Blog</div>
+      </div>
+      <h1>Der Blog<br>für<em>München &</em>Bayern</h1>
+      <p>Aktuelle Themen, Ratgeber und Geschichten aus München und ganz Bayern — täglich frisch.</p>
+      <a href="#articles" class="hero-btn">Alle Artikel →</a>
+    </div>
+    <div class="hero-cards">
+      <div class="hero-card"><div class="hero-card-icon">🏙</div><div class="hero-card-text"><strong>München aktuell</strong>Neuigkeiten aus der bayerischen Hauptstadt</div></div>
+      <div class="hero-card"><div class="hero-card-icon">📰</div><div class="hero-card-text"><strong>Täglich neu</strong>Frische Artikel jeden Tag kostenlos lesen</div></div>
+      <div class="hero-card"><div class="hero-card-icon">🍺</div><div class="hero-card-text"><strong>Bayerische Themen</strong>Kultur, Wirtschaft & Lifestyle aus Bayern</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="articles">
+  <div class="section-top">
+    <div class="section-icon">📝</div>
+    <div class="section-title">Aktuelle Artikel</div>
+    <div class="section-line"></div>
+    <a href="index.html" class="see-all">Alle →</a>
+  </div>
+  <div class="grid" id="posts-grid">
+    <div class="empty"><h3>Noch keine Artikel</h3><p>Inhalte erscheinen bald.</p></div>
+  </div>
+</div>
+
+<footer>
+  <div class="diamond-strip-footer"></div>
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="fl">Münchner<span>Blog</span></div><p>Der Blog für München und Bayern. Täglich aktuelle Themen, Ratgeber und Geschichten aus dem Herzen Bayerns.</p></div>
+    <div class="footer-col"><h4>Themen</h4><a href="#">München</a><a href="#">Bayern</a><a href="#">Kultur</a><a href="#">Wirtschaft</a></div>
+    <div class="footer-col"><h4>Blog</h4><a href="#">Über uns</a><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Kontakt</a></div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 MünchnerBlog &nbsp;|&nbsp;<a href="#">Impressum</a>&nbsp;|&nbsp;<a href="#">Datenschutz</a></div>
+</footer>
+<a href="admin.html" class="admin-link">⚙ Admin</a>
+<script>
+const bgs=['bg1','bg2','bg3','bg4','bg5','bg6'];
+function loadPosts(){
+  const posts=JSON.parse(localStorage.getItem('db_posts')||'[]');
+  const grid=document.getElementById('posts-grid');
+  if(!posts.length)return;
+  grid.innerHTML='';
+  posts.slice().reverse().forEach((p,i)=>{
+    const bg=bgs[i%bgs.length];
+    const date=new Date(p.date).toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'});
+    const excerpt=p.content.replace(/<[^>]+>/g,'').substring(0,110)+'...';
+    grid.innerHTML+=`<div class="card" onclick="location.href='post.html?id=${p.id}'">
+      <div class="card-img"><div class="card-img-bg ${bg}"></div><span class="card-cat">${p.category||'Bayern'}</span></div>
+      <div class="card-body">
+        <div class="card-meta">${date} &nbsp;·&nbsp; ${p.author||'Redaktion'}</div>
+        <div class="card-title">${p.title}</div>
+        <div class="card-excerpt">${excerpt}</div>
+        <a class="card-link" href="post.html?id=${p.id}">Weiterlesen →</a>
+      </div></div>`;
+  });
+}
+loadPosts();
+</script>
+</body>
+</html>
